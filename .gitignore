@@ -1,0 +1,12 @@
+
+# Large raw datasets — kept locally, not committed to Git
+data/raw/gunfire_download/
+data/raw/sesa_download/
+
+# Archives
+*.zip
+
+# Python generated files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
