@@ -1,0 +1,32 @@
+# Real-time streaming defaults (src/realtime/, scripts/run_realtime.py)
+#
+# These mirror configs/sample_rate.yaml (kept in sync manually -- there is no
+# code that loads this file automatically yet; it documents the recommended
+# real-time settings and is a starting point for wiring into run_realtime.py's
+# argparse defaults if you want a single source of truth).
+
+sample_rate: 16000
+nfft: 512
+win_length: 320
+hop_length: 128        # 8 ms per real-time hop at 16 kHz
+
+split_hz: 1500.0
+high_hz: 7900.0
+
+# AI (DC-CRN) branch causal context window. Larger = better use of the
+# (non-strictly-causal) trained model's temporal context, at the cost of more
+# algorithmic latency (context_frames * hop_length samples) and more compute.
+context_frames: 8      # ~76 ms algorithmic latency at hop=128
+
+# Run the neural net every N hops instead of every hop; holds the mask
+# steady in between. Use this to bring RTF below 1.0 on slower hardware
+# without changing latency (only mask time-resolution).
+infer_every_n_hops: 2
+
+# Reference-assisted low-band NLMS
+nlms_filter_len: 64
+nlms_mu: 0.08
+
+# Suggested real-time audio callback block size (independent of hop_length;
+# the pipeline buffers internally to hop_length regardless of this value).
+callback_block_size: 256

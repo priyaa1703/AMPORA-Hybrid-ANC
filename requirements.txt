@@ -1,0 +1,19 @@
+numpy
+scipy
+pandas
+soundfile
+PyYAML
+torch
+tqdm
+onnx
+onnxruntime
+pystoi
+pesq
+pytest
+matplotlib
+nbformat
+
+# Optional (real-time streaming demo, scripts/run_realtime.py mic mode):
+#   sounddevice     # needs a system PortAudio runtime, e.g. `apt-get install libportaudio2`
+# Optional (extended_metrics.optional_wer only):
+#   openai-whisper

@@ -1,0 +1,9 @@
+sample_rate: 16000
+global_band_low_hz: 80
+global_band_high_hz: 7900
+ai_band_low_hz: 1500
+ai_band_high_hz: 7900
+nfft: 512
+win_length: 320
+hop_length: 128
+center_stft: false

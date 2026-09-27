@@ -1,0 +1,8 @@
+name: AMPORA_Lite_DC_CRN
+sample_rate: 16000
+base_channels: 16
+gru_hidden: 64
+gru_layers: 1
+bidirectional: false
+mask_type: complex_residual
+mask_bound: tanh

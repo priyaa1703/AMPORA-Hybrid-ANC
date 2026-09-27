@@ -1,0 +1,12 @@
+# Starting values only. Tune on a training/development set; do not present as measured optimum.
+frame_ms: 2.0
+spectral_flux_threshold: null
+kurtosis_threshold: null
+snr_db_threshold: null
+smoothing_frames: 5
+hysteresis_frames: 3
+states:
+  stationary: [nlms_emphasis, normal_ai]
+  complex: [nlms_normal, stronger_ai]
+  transient: [freeze_or_slow_nlms, ai_priority]
+  mixed_uncertain: [conservative_hybrid]
