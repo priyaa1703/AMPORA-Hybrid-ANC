@@ -10,6 +10,18 @@ Built against DRDO problem statement PS26052 (AI/ML-enabled ANC for defence
 communications). See `AUDIT_REPORT.md` for the original scope audit and
 `CHANGELOG_ADDITIONS.md` for a full history of what was added, when, and why.
 
+## Team and repository structure
+
+This repository combines two parts of one system (DRDO PS26052 — AI/ML-enabled ANC for defence communication):
+
+| Folder | Part | Author |
+|---|---|---|
+| [`hardware_dsp_nlms/`](hardware_dsp_nlms/) | **Hardware DSP implementation track**: staged Python reference of the reference-assisted NLMS chain (band-pass, 1.5 kHz split, NLMS, adaptation gating, double-talk handling) | [@Vincili2005](https://github.com/Vincili2005) |
+| `/` (`src/`, `scripts/`, `data/`, `models/`, `results/`) | **AI/ML hybrid ANC**: DC-CRN high-band model, dataset pipeline, training, evaluation, real-time streaming pipeline | [@priyaa1703](https://github.com/priyaa1703) |
+
+Her full commit history is preserved in this repo (imported from `Vincili2005/ANC_python`).
+See `hardware_dsp_nlms/STAGES.md` for what each stage script does and how it maps onto the low-band branch of the AI/ML system.
+
 ## Results snapshot (measured, not asserted)
 
 Confidence-gated hybrid inference (`scripts/render_sih_demo.py`), evaluated across a
