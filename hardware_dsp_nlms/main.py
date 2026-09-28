@@ -1,0 +1,1 @@
+print("STAGE 1 PROGRAM STARTED")
